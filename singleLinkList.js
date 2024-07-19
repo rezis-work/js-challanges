@@ -163,6 +163,10 @@ class LinkedList {
 
     return counter;
   }
+
+  clear() {
+    this.head = null;
+  }
 }
 
 const myLinkedList = new LinkedList(1);
@@ -171,4 +175,4 @@ myLinkedList.unshift(0);
 myLinkedList.push(3);
 
 myLinkedList.insert(2, 20);
-console.log(myLinkedList);
+console.log(myLinkedList.clear());
