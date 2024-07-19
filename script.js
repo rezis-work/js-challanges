@@ -151,6 +151,18 @@ class LinkedList {
 
     return true;
   }
+
+  size() {
+    let counter = 0;
+    let temp = this.head;
+
+    while (temp) {
+      counter++;
+      temp = temp.next;
+    }
+
+    return counter;
+  }
 }
 
 const myLinkedList = new LinkedList(1);
