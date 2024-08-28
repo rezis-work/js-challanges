@@ -78,12 +78,26 @@ class DoublyLinkList {
     this.length--;
     return temp;
   }
+
+  reverse() {
+    let temp = this.head;
+    this.head = this.tail;
+    this.tail = temp;
+    let next = temp;
+    let prev = null;
+
+    for (let i = 0; i < this.length; i++) {
+      next = temp.next;
+      temp.next = prev;
+      prev = temp;
+      temp = next;
+    }
+  }
 }
 
 const myDoubleLinkList = new DoublyLinkList(0);
 myDoubleLinkList.push(1);
 myDoubleLinkList.push(2);
 myDoubleLinkList.push(3);
-myDoubleLinkList.pop();
-myDoubleLinkList.shift();
+myDoubleLinkList.reverse();
 console.log(myDoubleLinkList);
